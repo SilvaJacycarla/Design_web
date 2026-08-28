@@ -1,0 +1,14 @@
+let nas = prompt("Digite seu ano de nascimento:");
+nascc = parseInt(nasc);
+
+let fds = confirm("Se hoje for final de semana, clique ok");
+let idade = 2026 - nasc;
+
+alert(`Você é maior de idade: ${idade >= 18}`)
+alert(`Hoje é final de semana: ${fds}`);
+
+if(idade >= 18 && fds){
+    alert("Você pode beber");
+}else{
+    alert("Vcoê não pode beber");
+}
