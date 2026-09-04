@@ -1,5 +1,5 @@
 let dia = prompt("Escolha um dia da semana\nSendo 1:Domingo - 7:Sábado");
-
+dia = Number(dia);
 if (dia <=0 || dia>8 ){
     alert("Dia inválido");
 }else if(dia == 1){
