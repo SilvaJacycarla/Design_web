@@ -1,25 +1,26 @@
- const balu = {
-    nome: "Balu Brasil",
-    cor: "preto",
-    altura: 0.58,
-    peso: 11.5,
-    raca: "vira-lata",
-    latir(){
-        alert("au au");
-    },
-    comer(kg){
-        this.peso = this.peso + kg;
-        alert("Comi")
-    },
-    cagar(kg){
-        this.peso = this.peso - kg;
-        alert("Me caguei")
-    },
-    saudar(){
-        let msg = `Olá meu nome é ${this.nome}\n`;
-        msg = msg+`Cor: ${this.cor} Raça:${this.raca}\n`
-        msg = msg+`Peso: ${this.peso}\n`
-        msg = msg+`Altura: ${this.paltura}\n`
-        alert(msg)
+/* Processamento/Armazenamento */
+const lista = []
+/* Entradas */
+const formulario = document.getElementById("formulario");
+const texto = formulario.texto;
+/*Saidas*/ 
+const tags = document.getElementById("tags")
+/*Gatilho/Evento */
+formulario.addEventListener("submit", function(e){
+    e.preventDefault();
+    let t = texto.value;
+    t = t.split(" "); 
+    for (let i = 0; i<t.length; i++){
+        let palavra = t[i];
+        palavra = palavra.toUpperCase();
+        if (palavra.includes("#")){
+            lista.push(palavra);
+        }else if(palavra.includes("#")){
+            let pos = palavra.indexOf("#");
+            palavra.slice(0,pos);
+            lista.push(palavra);
+        }
     }
- }
+    tags.innerHTML = lista;
+    formulario.reset();
+});
